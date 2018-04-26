@@ -19,7 +19,7 @@ let xhr = new XMLHttpRequest();
    "Login": "Ahumadaladmin",
    "Password":"lahumada123456%"
  }))
-const data  = (inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,inputChildren) =>{   
+const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,inputChildren) =>{   
 //  let inputs= [...document.querySelectorAll('[name=data]')],
 //  values =  inputs.map(val => val.value);
     let xhr2 = new XMLHttpRequest();
@@ -40,22 +40,25 @@ const data  = (inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,i
             }
         }
         xhr2.send(JSON.stringify({
-            "culture":"ES", "pageNumber":"1","cityId":29,"day":inputDay,"month":inputMonth,"year":inputYear,"nights":inputNights,"rooms":inputRooms,"adult":inputAdult,"children":inputChildren
+            "culture":inputCulture, "pageNumber":inputPage,"cityId":inputCity,"day":inputDay,"month":inputMonth,"year":inputYear,"nights":inputNights,"rooms":inputRooms,"adult":inputAdult,"children":inputChildren
             // "culture":"ES", "pageNumber":"1","cityId":29,"day":26,"month":4,"year":2018,"nights":2,"rooms":1,"adult":1,"children":0
         }))
     }
 const getDataValue = () => {
-    let inputDay = document.getElementById('day').value,
+    let inputCulture= document.getElementById('culture').value,
+    inputPage = document.getElementById('page').value,
+    inputCity = document.getElementById('city').value,
+    inputDay = document.getElementById('day').value,
     inputMonth = document.getElementById('month').value,
     inputYear = document.getElementById('year').value,
     inputNights = document.getElementById('nights').value,
     inputRooms = document.getElementById('rooms').value,
     inputAdult = document.getElementById('adult').value,
     inputChildren = document.getElementById('children').value;
-    return {inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,inputChildren};
+    return {inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,inputChildren};
 }
 document.getElementById("button-click").addEventListener("click",() => {
     console.log(getDataValue());
     let object = getDataValue();
-    data(object.inputDay,object.inputMonth,object.inputYear,object.inputNights,object.inputRooms,object.inputAdult,object.inputChildren);
+    data(object.inputCulture,object.inputPage,object.inputCity,object.inputDay,object.inputMonth,object.inputYear,object.inputNights,object.inputRooms,object.inputAdult,object.inputChildren);
 });
