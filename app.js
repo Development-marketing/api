@@ -1,5 +1,5 @@
 let xhr = new XMLHttpRequest();
- xhr.open('POST', 'http://reservashoteleras2.azurewebsites.net/Api/auth2/login');
+ xhr.open('POST', 'http://reservashoteleras2.azurewebsites.net/Api/Auth2/login');
  xhr.setRequestHeader('Content-Type', 'application/json');
  xhr.onprogress = () => {
    console.log('cargando');
@@ -78,26 +78,26 @@ const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,in
         return {inputName,inputLname,inputEmail,inputDocument,inputBirthdate};
     }
 
-    let xhr3 = new XMLHttpRequest();
-    console.log(sessionStorage.getItem('vl2'),sessionStorage.getItem('vl1'));
-    xhr3.open('POST', 'http://reservashoteleras2.azurewebsites.net/Api/Search/AddCustomer');
-    xhr3.setRequestHeader('Content-Type', 'application/json');
-    xhr3.setRequestHeader('X-SESSION',sessionStorage.getItem('vl1'));
-    xhr3.setRequestHeader('Authorization',sessionStorage.getItem('vl2'));
-    sessionStorage.clear('vl1');
-    sessionStorage.clear('vl2');
-    xhr3.onprogress = () => {
-    console.log('cargando');
-    }
-    xhr3.onload = () => {
-        if (xhr3.status === 200) {
-            let response = JSON.parse(xhr2.responseText);
-            console.log(response);
-        }
-    }
-    xhr3.send(JSON.stringify({
-        "firstname":"Brayan","lastname":"Garcia","email":"bga4133@gmail.com","document":"Nimierda" ,"birthdate":"Que le importa pirob"
-    }))
+    // let xhr3 = new XMLHttpRequest();
+    // console.log(sessionStorage.getItem('vl2'),sessionStorage.getItem('vl1'));
+    // xhr3.open('POST', 'http://reservashoteleras2.azurewebsites.net/Api/Search/AddCustomer');
+    // xhr3.setRequestHeader('Content-Type', 'application/json');
+    // xhr3.setRequestHeader('X-SESSION',sessionStorage.getItem('vl1'));
+    // xhr3.setRequestHeader('Authorization',sessionStorage.getItem('vl2'));
+    // sessionStorage.clear('vl1');
+    // sessionStorage.clear('vl2');
+    // xhr3.onprogress = () => {
+    // console.log('cargando');
+    // }
+    // xhr3.onload = () => {
+    //     if (xhr3.status === 200) {
+    //         let response = JSON.parse(xhr3.responseText);
+    //         console.log(response);
+    //     }
+    // }
+    // xhr3.send(JSON.stringify({
+    //     "firstname":"Brayan","lastname":"Garcia","email":"bga4133@gmail.com","document":"Nimierda" ,"birthdate":"Que le importa pirob"
+    // }))
     // const  eventClick = () =>{
     //     document.getElementById("button-click2").addEventListener("click",() => {
     //         console.log(getDataSignUp());
@@ -108,3 +108,25 @@ const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,in
     // if(document.getElementById("button-click2")){
     //     eventClick();
     // }
+    // login getdata
+    let xhr4 = new XMLHttpRequest();
+    console.log(sessionStorage.getItem('vl2'),sessionStorage.getItem('vl1'));
+    xhr4.open('POST', 'http://reservashoteleras2.azurewebsites.net/Api/Auth2/login');
+    xhr4.setRequestHeader('Content-Type', 'application/json');
+    xhr4.setRequestHeader('X-SESSION',sessionStorage.getItem('vl1'));
+    xhr4.setRequestHeader('Authorization',sessionStorage.getItem('vl2'));
+    sessionStorage.clear('vl1');
+    sessionStorage.clear('vl2');
+    xhr4.onprogress = () => {
+    console.log('cargando');
+    }
+    xhr4.onload = () => {
+        if (xhr4.status === 200) {
+            let response = JSON.parse(xhr4.responseText);
+            console.log(response);
+        }
+    }
+    xhr4.send(JSON.stringify({
+        "Login": "luisgabrielahumada2@gmail.com",
+        "Password":"732014631"
+    }))
