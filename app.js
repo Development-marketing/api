@@ -19,7 +19,7 @@ let xhr = new XMLHttpRequest();
    "Login": "Ahumadaladmin",
    "Password":"lahumada123456%"
  }))
-const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,inputChildren,inputName,inputLname,inputEmail,inputDocument,inputBirthdate) =>{   
+const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,inputNights,inputRooms,inputAdult,inputChildren,inputName,inputLname,inputEmail,inputDocument,inputBirthdate,inputLogin,inputPass) =>{   
 //  let inputs= [...document.querySelectorAll('[name=data]')],
 //  values =  inputs.map(val => val.value);
 // api reservation
@@ -69,15 +69,6 @@ const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,in
         getEvent();
     }
     // api signUp
-    const getDataSignUp = () => {
-        let inputName = document.getElementById('name').value,
-        inputLname = document.getElementById('lastname').value,
-        inputEmail = document.getElementById('email').value,
-        inputDocument = document.getElementById('document').value,
-        inputBirthdate = document.getElementById('birthdate').value;
-        return {inputName,inputLname,inputEmail,inputDocument,inputBirthdate};
-    }
-
     // let xhr3 = new XMLHttpRequest();
     // console.log(sessionStorage.getItem('vl2'),sessionStorage.getItem('vl1'));
     // xhr3.open('POST', 'http://reservashoteleras2.azurewebsites.net/Api/Search/AddCustomer');
@@ -98,6 +89,14 @@ const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,in
     // xhr3.send(JSON.stringify({
     //     "firstname":"Brayan","lastname":"Garcia","email":"bga4133@gmail.com","document":"Nimierda" ,"birthdate":"Que le importa pirob"
     // }))
+    // const getDataSignUp = () => {
+    //     let inputName = document.getElementById('name').value,
+    //     inputLname = document.getElementById('lastname').value,
+    //     inputEmail = document.getElementById('email').value,
+    //     inputDocument = document.getElementById('document').value,
+    //     inputBirthdate = document.getElementById('birthdate').value;
+    //     return {inputName,inputLname,inputEmail,inputDocument,inputBirthdate};
+    // }
     // const  eventClick = () =>{
     //     document.getElementById("button-click2").addEventListener("click",() => {
     //         console.log(getDataSignUp());
@@ -129,4 +128,20 @@ const data  = (inputCulture,inputPage,inputCity,inputDay,inputMonth,inputYear,in
     xhr4.send(JSON.stringify({
         "Login": "luisgabrielahumada2@gmail.com",
         "Password":"732014631"
+        // "Login":inputLogin,"Password":inputPass
     }))
+    // const getDatalogin = () =>{
+    //     let inputLogin = document.getElementById('login').value,
+    //     inputPass = document.getElementById('pass').value;
+    //     return {inputLogin,inputPass};
+    // }
+    //     const  eventClick = () =>{
+    //     document.getElementById("button-click2").addEventListener("click",() => {
+    //         console.log(getDataSignUp());
+    //         let object = getDataSignUp();
+    //         data(object. inputLogin,object.inputPass);
+    //     });
+    // }
+    // if(document.getElementById("button-click3")){
+    //     eventClick();
+    // }
